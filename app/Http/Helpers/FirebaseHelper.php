@@ -10,6 +10,7 @@ class FirebaseHelper{
 
 	public function __construct(){
 		$DEFAULT_URL = ENV("FB_URL");
+		$DEFAULT_TOKEN = ENV("FB_TOKEN");
 		$this->firebaseObject = new \Firebase\FirebaseLib($DEFAULT_URL, $DEFAULT_TOKEN);
 		$this->firebaseObject->setToken($DEFAULT_TOKEN);
 	}
