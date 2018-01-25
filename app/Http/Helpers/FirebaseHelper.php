@@ -7,12 +7,9 @@ class FirebaseHelper{
 
 	protected $urlKey="";//gserviceaccount
 	private $firebaseObject;
-	private $config;
 
 	public function __construct(){
-		$this->config = \Config::get('firebase');
-		$DEFAULT_URL = $this->config["url"];
-		$DEFAULT_TOKEN = $this->config["token"];
+		$DEFAULT_URL = ENV("FB_URL");
 		$this->firebaseObject = new \Firebase\FirebaseLib($DEFAULT_URL, $DEFAULT_TOKEN);
 		$this->firebaseObject->setToken($DEFAULT_TOKEN);
 	}
